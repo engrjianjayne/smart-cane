@@ -1,2 +1,2 @@
 # smart-cane
-TOUCHGUIDANCE: ENHANCING ACCESSIBILITY WITH AN ARDUINO-BASED SMART CANE DEVICE FOR VISUALLY IMPAIRED IN SAN PABLO CITY OF LAGUNA
+Touchguidance: Enhancing Accessibility with an Arduino-based Smart Cane Device for Visually Impaired in San Pablo City of Laguna
