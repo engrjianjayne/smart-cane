@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg" />
+    <link rel="shortcut icon" href="favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="MyWebSite" />
+    <link rel="manifest" href="favicon/site.webmanifest" />
+    <title>Smart Cane</title>
+</head>
+
+<body>
+    <!-- Note -->
+    <div class="note">
+        <h4 class="bscpe">Bachelor of Science in Computer Engineering</h4>
+    </div>
+
+    <!-- Header -->
+    <div class="header">
+        <h1><em>TOUCHGUIDANCE: ENHANCING ACCESSIBILITY WITH AN ARDUINO-BASED SMART CANE
+                DEVICE FOR VISUALLY IMPAIRED IN SAN PABLO CITY OF LAGUNA</em>
+        </h1>
+        <p><strong>Engr. Jian Jayne O. Muñoz</strong></p>
+        <p>2024</p>
+    </div>
+
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <a href="#Components">Components</a>
+        <a href="#Schematic">Schematic Diagram</a>
+        <a href="#SourceCode">Source Code</a>
+        <a href="#Developer">Developer</a>
+    </div>
+
+    <!-- The flexible grid (content) -->
+    <div class="row">
+        <div class="side">
+            <h2>Trivia!</h2>
+            <div class="fakeimg"><img src="images/powerofcane.jpg" alt="power of cane"></div>
+            <p class="indentation">
+            <p>According to <a
+                    href="https://artwalkingsticks.com/blogs/blog/the-history-of-walking-sticks-from-ancient-times-to-modern-day"><em>Art
+                        Walking Sticks (2023)</em></a>, Walking sticks were widely used by both men and women in ancient
+                Egypt. They frequently had elaborate carvings and ornamentation and were constructed of wood.
+                High-ranking officials and members of the royal family frequently carried walking sticks, which were
+                regarded as a sign of authority and power. Important papers or priceless items were kept in secret
+                sections built inside some sticks.</p>
+
+            <h3>Did you know?</h3>
+            <div class="fakeimg"><img src="images/arduinouno.jpg" alt="arduino uno r3">
+                <p><a href="https://sparkfuneducation.com/concept-library/what-is-an-arduino.html">Arduino Uno</a></p>
+            </div>
+            <p>Arduino (/ɑːrˈdwiːnoʊ/) is an Italian open-source hardware and software company, project, and user
+                community that designs and manufactures single-board microcontrollers and microcontroller kits for
+                building digital devices. Its software is released under the GNU Lesser General Public License (LGPL) or
+                the GNU General Public License (GPL), which allows anybody to manufacture Arduino boards and distribute
+                the software. Its hardware goods are licensed under a CC BY-SA license. Arduino boards can be purchased
+                commercially from approved distributors or the official website</p>
+            <p>Numerous microprocessors and controllers are used in Arduino board designs. Various extension boards
+                (also known as "shields"), breadboards (for prototyping), and other circuits can be interfaced with the
+                boards' sets of digital and analog input/output (I/O) pins. In addition to being utilized for program
+                loading, the boards have serial communications interfaces, such as Universal Serial Bus (USB) on certain
+                variants. In addition to using conventional compiler toolchains, the Arduino project offers an
+                integrated development environment (IDE) and a command line tool created in Go. The microcontrollers can
+                be programmed using the C and C++ programming languages (Embedded C) and a standard API, also known as
+                the Arduino Programming Language, which is inspired by the Processing language and used with a modified
+                version of the Processing IDE.</p>
+
+            <h3>Need help choosing the right Arduino?</h3>
+            <div class="fakeimg"><img src="images/guideforarduino.jpg" alt="guide for arduino"></div><br>
+            <a href="https://www.freecodecamp.org/news/the-arduino-handbook/">
+                Just Click: <strong>The Arduino Handbook</strong></a><br><br>
+
+            <div class="fakeimg"><img src="images/projecthub.jpg" alt="projecthub"></div><br>
+            <a href="https://projecthub.arduino.cc/"><strong>
+                    Awesome Arduino Projects for Beginners and
+                    Engineers!</strong></a>
+            <p>These projects are perfect for both inexperienced and seasoned
+                makers since they may foster a strong grasp of electronics, programming,
+                and practical applications.</p>
+        </div>
+
+        <!-- Main -->
+        <div class="main">
+            <h2>Introduction</h2>
+            <h5>Courtesy: Resources for the Blind, Inc. Philippines, May 2023</h5>
+            <div class="fakeimg"><img class="img-st" src="images/blindcommunity.jpg" alt="Resources for Blind"></div>
+            <p class="center">Figure 1 Blind Community</p>
+            <p class="indentation">In the realm of technological innovation, the quest for
+                inclusive solutions has paved the way for
+                groundbreaking advancements aimed at improving the lives of individuals with diverse needs. Among those
+                who face unique challenges in their daily lives, the visually impaired community stands out, grappling
+                with obstacles that hinder their mobility and independence (Wang Y, 2019). Addressing this pressing
+                issue, our proposed device is an automated one, which helps a visually impaired person detect obstacles
+                either through beeps or vibrations allowing him to walk confidently and smartly even in a crowded area.
+                According to the World Health Organization (WHO), it is estimated that approximately 1.3 billion people
+                live with some form of vision impairment. Thus, we have come up with a solution of this innovation using
+                multidisciplinary subjects which is reliable and cost-effective (Das et al., 2019).
+            </p>
+
+            <!-- Objectives of the Project -->
+            <h2>Objectives of the Project</h2>
+            <p><em>General Objective:</em><br>
+                The project aims to support the visually impaired in San Pablo City of Laguna using
+                Arduino-Based SmartCane.<br><br>
+                <em>Specific objectives:</em><br>
+                Specifically, the project aims to:<br><br>
+                <b>1.</b> Design and develop a device that perform the following:<br>
+                <em>a. Detecting the distance of objects ahead through the use of Ultrasonic Sensor HC-SR04 in order to
+                    be aware of any objects in front;<br>
+                    b. Vibrating on the hand of the smart cane to have an indication that there is an object ahead of
+                    the distance of 0.034cm;<br>
+                    c. Emitting sound using alarm buzzer module when 0.034cm distance detected, therefore that the
+                    user's surroundings knows that there is an object in front;</em><br><br>
+                <b>2.</b> Prepare a deployment plan that can be used in San Pablo City of Laguna.<br>
+            </p>
+
+            <!-- Design of the Project -->
+            <h2 id="Components">Design of the Project</h2>
+            <h4><strong>Note: </strong>Feel free to hover over each component to see its details.</h4>
+            <div class="fakeimg">
+                <img src="images/smartcane.jpg" alt="smartcane" usemap="#image-map"></img>
+                <map name="image-map">
+                    <area target="_blank" alt="Cane" title="Cane" href="https://en.wikipedia.org/wiki/Cane"
+                        rel="noopener" coords="840,741,835,412,815,412,820,741,807,748,812,773,849,773,851,741"
+                        shape="poly">
+                    <area target="_blank" alt="Cane" title="Cane" href="https://en.wikipedia.org/wiki/Cane"
+                        rel="noopener" coords="881,153,876,134,785,122,778,142,798,148,815,151,818,248,832,249,822,149"
+                        shape="poly">
+                    <area target="_blank" alt="Vibration Motor Module 5VDC 9000RPM"
+                        title="Vibration Motor Module 5VDC 9000RPM"
+                        href="https://docs.arduino.cc/libraries/vibrationmotor/" rel="noopener" coords="828,150,842,191"
+                        shape="rect">
+                    <area target="_blank" alt="HC-SR04 Sensor Module" title="HC-SR04 Sensor Module"
+                        href="https://www.nn-digital.com/en/blog/2019/08/07/how-the-hc-sr04-sensor-works-and-example-programs-with-arduino/#google_vignette"
+                        rel="noopener" coords="846,404,766,361" shape="rect">
+                    <area target="_blank" alt="Arduino Uno" title="Arduino Uno"
+                        href="https://en.wikipedia.org/wiki/Arduino_Uno" rel="noopener" coords="837,253,879,354"
+                        shape="rect">
+                    <area target="_blank" alt="Arduino Uno" title="Arduino Uno"
+                        href="https://en.wikipedia.org/wiki/Arduino_Uno" rel="noopener" coords="813,247,796,268"
+                        shape="rect">
+                    <area target="_blank" alt="Arduino Uno" title="Arduino Uno"
+                        href="https://en.wikipedia.org/wiki/Arduino_Uno" rel="noopener" coords="799,330,815,349"
+                        shape="rect">
+                    <area target="_blank" alt="9V Battery" title="9V Battery"
+                        href="https://energyeducation.ca/encyclopedia/Battery" rel="noopener" coords="796,275,830,327"
+                        shape="rect">
+                </map>
+            </div>
+
+            <!-- Smart Cane 3D Model -->
+            <p class="center">Figure 2 Smart Cane 3D Model</p>
+            <p class="indentation">The smart cane consists of several components, including
+                an Arduino microcontroller, ultrasonic sensors, a vibration motor, and a speaker. The ultrasonic sensors
+                are used to detect obstacles in the user's path and send signals to the Arduino, which then activates
+                the vibration motor to alert the user. The speaker is used to provide auditory cues, such as directions
+                or warnings of nearby obstacles. This feature is particularly useful for individuals who are unfamiliar
+                with their surroundings particularly who are visually impaired. The design of the smart cane is also
+                focused on safety and durability. The device is lightweight and compact, making it easy to carry and
+                maneuver. It is also designed to withstand the wear and tear of
+                daily use, with a sturdy construction and waterproof casing.
+            </p>
+
+            <!-- Flowchart -->
+            <h2>Flowchart</h2>
+            <div class="fakeimg"><img class="img-st" src="images/flowchart.jpg" alt="flowchart"></div>
+            <p class="center">Figure 3 Flowchart</p>
+            <p class="indentation">The smart cane operates through a carefully structured sequence, beginning with its
+                initialization upon activation. If the device responds negatively during this phase, indicating a
+                failure to initialize correctly, a predefined process is triggered to send the smart cane back for
+                further assessment or repair. Conversely, in the case of a positive response, the cane seamlessly moves
+                through the next stages of functionality. It employs an ultrasonic sensor to detect nearby objects, and
+                upon identifying an object at a distance of 0.034 units, a simultaneous activation of the vibration
+                motor and alarm buzzer ensues, providing the user with a clear indication of the proximity of an
+                obstacle. Additionally, the device is designed for continuous operation, as a straightforward loop
+                restarts the operating system, ensuring reliability in assisting individuals with visual impairments.
+            <p class="indentation"> In summary, the smart cane's systematic approach integrates both positive and
+                negative responses, offering users an effective and reliable tool for navigating their surroundings. The
+                combination of advanced sensor technology, distance assessment, and immediate feedback mechanisms
+                contributes to a seamless and dependable user experience, promoting safety and independence for
+                individuals with visual impairments.
+            </p>
+
+            <!-- Circuit Diagram -->
+            <h2 id="Schematic">Circuit Diagram</h2>
+            <h4>Make sure that the wires/pins are connected and correct.</h4>
+            <div class="fakeimg"><img class="img-st" src="images/wiringcomponents.png" alt="wiring components"></div>
+            <p class="center">Figure 4 Pin Layout</p>
+
+            <!-- Schematic Diagram -->
+            <div class="fakeimg"><img class="img-st" src="images/schematicdiagram.jpg" alt="wiring components"></div>
+            <p class="center">Figure 5 Schematic Diagram</p>
+            <p class="indentation">The circuit diagram consists of several components that
+                work together to convert the ultrasonic signals into digital data that can be read by the Arduino board.
+                The ultrasonic sensor itself is an HC-SR04 module, which has four pins: VCC (5V), GND (ground), Trigger
+                (pin 2), and Echo (pin 3). The Trigger pin is connected to digital pin 2 of the Arduino board, and it is
+                used to send a short pulse to initiate the ultrasonic measurement. The Echo pin is connected to digital
+                pin 3 of the Arduino board, and it receives the reflected ultrasonic signal from the object.
+            </p>
+
+            <!-- Source Code -->
+            <h2 id="SourceCode">Source Code</h2>
+            <h4>Make it sure that you have a Arduino IDE to run this code.</h4>
+            <pre>
+// Define pin numbers
+const int trigPin = 2;
+const int echoPin = 3;
+const int buzzerPin = 4;
+const int motorPin = 5;
+                
+// Define threshold distance for detection
+const int detectionThreshold = 30; 
+// Adjust the value based on your needs
+                
+void setup() {
+  Serial.begin(9600);
+    pinMode(trigPin, OUTPUT);
+    pinMode(echoPin, INPUT);
+    pinMode(buzzerPin, OUTPUT);
+    pinMode(motorPin, OUTPUT);
+}
+                
+void loop() {
+// Trigger the ultrasonic sensor
+    digitalWrite(trigPin, LOW);
+    delayMicroseconds(2);
+    digitalWrite(trigPin, HIGH);
+    delayMicroseconds(10);
+    digitalWrite(trigPin, LOW);
+                
+// Measure the echo duration
+long duration = pulseIn(echoPin, HIGH);
+                
+// Calculate distance in centimeters
+int distance = duration * 0.034 / 2;
+                
+// Output distance to serial monitor
+Serial.print("Distance: ");
+Serial.println(distance);
+                
+/* Check if an obstacle is within t
+he threshold distance */
+if (distance < detectionThreshold) {
+/* Turn on the alarm buzzer and 
+vibrate the motor */
+  digitalWrite(buzzerPin, HIGH);
+  digitalWrite(motorPin, HIGH);
+} else {
+  /* Turn off the alarm buzzer and 
+  stop the motor */
+  digitalWrite(buzzerPin, LOW);
+  digitalWrite(motorPin, LOW);
+}   
+// Delay for stability
+delay(100);
+}
+</pre>
+            <!-- Testing and Procedure -->
+            <h2>Testing and Procedure</h2>
+            <h3>Hardware Testing</h3>
+            <div class="fakeimg"><img class="img-st" src="images/hardware-testing.jpg" alt="hardware-testing"></div>
+            <p class="center">Figure 6 Hardware Testing</p>
+            <p class="indentation">Developer examine the vibration and ultrasonic motors in hardware testing. Though
+                they originally intended to utilize a breadboard, the alarm buzzer module was only powered by 3.5 volts
+                as opposed to 5 volts, and it works.</p>
+
+            <div class="fakeimg"><img class="img-st" src="images/smartcane-testing.jpg" alt="smartcane-testing"></div>
+            <p class="center">Figure 7 Hardware Testing</p>
+            <p class="indentation">During this particular phase of development, the team of developer conducted
+                rigorous testing on the smart cane. The purpose of these tests was to evaluate how well the device
+                performed when faced with various obstacles or barriers. These barriers could include physical objects
+                or challenging environmental conditions that individuals with visual impairments commonly encounter.
+
+            <div class="fakeimg"><img class="img-st" src="images/real-world scenario testing.jpg"
+                    alt="real-world scenario smartcane-testing"></div>
+            <p class="center">Figure 8 Real-world Scenario Testing</p>
+            <p class="indentation">In this phase of development, developer conducted extensive testing on the smart
+                cane, specifically involving individuals with visual impairments.
+                The aim was to assess its functionality in real-world scenarios where users navigate through various
+                barriers. The smart cane was put to the test against different obstacles, and it successfully assisted
+                users in negotiating their surroundings.
+
+            <h2>Conclusion and Recommended Innovation in 10 years</h2>
+            <p class="indentation">
+                In conclusion, the TouchGuidance project has demonstrated significant
+                advancements in enhancing accessibility for visually impaired individuals through the development of an
+                Arduino-based smart cane device.The integration of cutting-edge technology has paved the way for a more
+                inclusive and independent experience for users navigating their surroundings. Throughout the past
+                decade, the project has not only addressed the limitations of traditional white canes but has also
+                opened new possibilities for improving the overall quality of life for the visually impaired
+                community.Looking ahead, the future of TouchGuidance relies on continuous innovation to meet the
+                evolving needs of visually impaired individuals. Over the next decade, key areas of improvement include
+                incorporating machine learning for personalized navigation, enhancing sensor technologies for precise
+                obstacle detection, exploring 5G connectivity for a more integrated user experience, and integrating
+                augmented reality for enhanced environmental information.
+            </p>
+
+            <p class="indentation">Prioritizing user experience design, improving battery
+                efficiency, and establishing global accessibility standards through collaboration with international
+                organizations are also crucial. These innovations position TouchGuidance to lead the revolution in
+                accessibility tools, fostering greater independence, safety, and inclusion. Envisioned for the next
+                decade is a fully integrated smart cane system that employs advanced technologies such as artificial
+                intelligence, machine learning, and IoT. The device will not only detect but also identify obstacles,
+                providing detailed descriptions through voice synthesis. It will enable navigation through unfamiliar
+                environments using real-time maps, connect to smart devices for home control, and offer fall detection
+                and emergency response capabilities, significantly enhancing accessibility and instilling confidence in
+                the daily lives of individuals with visual impairments.
+            </p>
+        </div>
+    </div>
+
+    <!-- Developer -->
+    <div class="center" id="Developer">
+        <h4>Name: Jian Jayne Osea Muñoz<br>
+            Address: Sitio Banginan San Pedro Tiaong, Quezon<br>
+            Phone number: 09108127874<br>
+            E-mail: cpe.jianjayne@email.com</h4>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <h3>© 2024 - Jian Jayne Muñoz</h3>
+        <p><em>This website is designed for aspiring engineers and individuals
+                dedicated to helping and supporting others.</em></p>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            imageMapResize();
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/image-map-resizer/1.0.10/js/imageMapResizer.min.js"></script>
+</body>
+
+</html>
